@@ -1,10 +1,6 @@
+# Backup directories with docker
+
 Backup a specified directory periodically (using cron rule)
-
-*Note: you can skip subdirectories from backup if you define `SKIP_DIRECTORIES=` environment variable and put folder names after it (with space separator), default: `log cache`*
-
-*Note 2: define `KEEP_FILES_UNTIL=` environment variable to delete files after x days automatically, default: `30`*
-
-*Note 3: define `SEPARATE_ARCHIVES=true` if you want to backup the subdirectories in separated archives*
 
 ## Usage
 
@@ -43,3 +39,11 @@ services:
       - "SEPARATE_ARCHIVES=false"
     restart: "always"
 ```
+
+## Notes
+
+*You can skip subdirectories from backup if you define `SKIP_DIRECTORIES=` environment variable and put folder names after it (with space separator), default: `log cache`*
+
+*Define `KEEP_FILES_UNTIL=` environment variable to delete files after x days automatically, default: `30`*
+
+*Define `SEPARATE_ARCHIVES=true` if you want to backup the subdirectories in separated archives*
