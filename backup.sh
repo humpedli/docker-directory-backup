@@ -28,13 +28,13 @@ done
 # tar directories
 if [ "$SEPARATE_ARCHIVES" != "true" ];
 then
-	file="$DEST/backup.$NOW.gz"
+	file="$DEST/backup.$NOW.tar.gz"
 	$TAR -C $INPUT -zc $SKIPFLAGS -f $file .
 else
 	for d in $INPUT/*
 	do
 		base=$(basename "$d")
-		file="$DEST/$base.$NOW.gz"
+		file="$DEST/$base.$NOW.tar.gz"
 		$TAR -C "$INPUT/$base" -zc $SKIPFLAGS -f $file .
 	done
 fi;
